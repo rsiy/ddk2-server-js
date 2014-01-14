@@ -1,0 +1,17 @@
+{
+	"name": "ddk2-server",
+	"version": "2.0.0b18",
+	"title": "DDK 2 Server JavaScript Library",
+	"extension": "js",
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/jsmreese/ddk2-server-js.git"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-uglify": "~0.2.4",
+		"grunt-contrib-clean": "~0.5.0",
+		"grunt-contrib-jshint": "~0.6.4",
+		"grunt-contrib-concat": "~0.3.0"
+	}
+}
