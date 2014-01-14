@@ -7,15 +7,6 @@ module.exports = function(grunt) {
 		// Metadata.
 		pkg: grunt.file.readJSON("package.json"),
 		
-		banner: function (filename) {
-			return "/* <%= pkg.title %>\n" +
-			" * Filename: " + filename + "\n" +
-			" * Version: <%= pkg.version %>\n" +
-			" * Date: <%= grunt.template.today('yyyy-mm-dd HH:MM:ss') %>\n" +
-			" * Copyright (c) <%= grunt.template.today('yyyy') %> PureShare, Inc.\n" +
-			" */\n\n";
-		},
-		
 		filename: function (settings) {
 			settings = grunt.util._.defaults(settings || {}, { minify: false, flag: "" }); 
 			return "<%= pkg.name %>" + (settings.flag ? "-" + settings.flag : "") + (settings.minify ? ".min" : "") + ".<%= pkg.extension %>";
@@ -29,12 +20,12 @@ module.exports = function(grunt) {
 		concat: {
 			options: {
 				stripBanners: false,
-				separator: ";" + grunt.util.linefeed
+				separator: ";" + grunt.util.linefeed,
+				banner: ""
 			},
-			standard: {
-				banner: "<%= banner(filename()) %>",
-				src: ["js/*.js"], //
-				dest: "dist/<%= filename() %>"
+			dist: {
+				src: ["js/*.js"],
+				dest: "dist/<%= filename() %>"			
 			}
 		},
 
@@ -43,9 +34,11 @@ module.exports = function(grunt) {
 		},
 		
 		uglify: {
-			standard: {
-				banner: "<%= banner(filename({ minify: true })) %>",
-				src: "<%= concat.standard.dest %>",
+			options: {
+				banner: "var DDK_SERVERJSMIN = true;\n\n"			
+			},
+			dist: {
+				src: "<%= concat.dist.dest %>",
 				dest: "dist/<%= filename({ minify: true }) %>"
 			}
 		}
