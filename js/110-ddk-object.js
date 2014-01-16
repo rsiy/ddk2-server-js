@@ -1970,7 +1970,7 @@ DDK.template.render = {
 	},
 	
 	bamset2Element: function (accumulator, elem, index) {
-		accumulator += "\n\n<div class=\"column element-grid " + elem.elemGridClassName + "\" " + elem.elemGridAttr;
+		accumulator += "\n\n<div class=\"column element-grid " + elem.elemGridClassName + "\" " + elem.elemGridAttr + ">";
 		accumulator += "\n<div class=\"bam-element " + elem.elemClassName + "\" " + elem.elemAttr;
 		accumulator += (elem.elemFormat ? " data-format=\"" + elem.elemFormat + "\"" : "");
 		accumulator += (elem.elemFormat ? " data-format-value=\"" + elem.elemValue + "\"" : "");
