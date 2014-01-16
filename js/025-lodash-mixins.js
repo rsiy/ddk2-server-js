@@ -157,19 +157,33 @@ _.mixin({
 	//
 	// _.zipNestedObject([["a", 1], ["b", [[["c", 3], ["d", 4]], [["e", 5], ["f", 6]]]]]);
 	// --> { a: 1, b: [{ c: 3, d: 4 }, { e: 5, f: 6 }] }
+	//
+	// _.zipNestedObject([["a", 1], ["b", 2], ["c", [["d", 4]]]]);
+	// --> { a: 1, b: 2, c: { d: 4 } }
 	zipNestedObject: function (collection) {
 		var result = _.zipObject(collection),
 			iterator = function (value, key, obj) {
-				if (_.isArray(value)) {
-					_.each(value, function (value, key, obj) {
+				// determine if `value` is a pairs array
+				// or an array of pairs arrays
+				if (_.isArray(value) && value.length) {
+					if (_.isPairsArray(value)) {
 						obj[key] = _.zipNestedObject(value);
-					});
+					} else {
+						_.each(value, function (value, key, obj) {
+							obj[key] = _.zipNestedObject(value);
+						});							
+					}
 				}
 			};
 		
 		_.each(result, iterator);		
 		
 		return result;
+	},
+	
+	isPairsArray: function (collection) {
+		return _.isArray(collection) && _.all(collection, function (value, key) {
+			return _.isArray(value) && value.length === 2 && typeof value[0] === "string";
+		});
 	}
 });
-
