@@ -575,10 +575,10 @@ DDK.controlOptions = function (id) {
 			options: {
 				initWidget: { id: "s_" + id + "_iw", label: "Options Widget", description: "The options in the data-options.", notes: "Widget name." },
 				keywords: { id: "s_" + id + "_keywords", label: "Keywords", description: "The state keyword overrides the option keyword, which overrides the data-options attribute.", notes: "" },
-				datasource: { id: "s_" + id + "_d", label: "Datasource", description: "Datasource to use when running the query specified in the “query_widget” option.", notes: "Default value is “db.amdb”." },
+				datasource: { id: "s_" + id + "_d", label: "Datasource", description: "Datasource to use when running the query specified in the 'query_widget' option.", notes: "Default value is 'db.amdb'." },
 				datasourceShared: { id: "s_" + id + "_dse", label: "Shared Datasource Enabled", description: "Enables (TRUE) or disables (FALSE) the use of a datasource that is being used or shared with other components.", notes: "" },
 				queryWidget: { id: "s_" + id + "_qw", label: "Query Widget", description: "Query for the content in the control.", notes: "Widget name." },
-				queryHeaderWidget: { id: "s_" + id + "_qhw", label: "Query Header Widget", description: "Query header for the control.", notes: "The value of this option is applied to the AMEngine’s “config.sqlheader” attribute." },
+				queryHeaderWidget: { id: "s_" + id + "_qhw", label: "Query Header Widget", description: "Query header for the control.", notes: "The value of this option is applied to the AMEngine’s 'config.sqlheader' attribute." },
 				queryDim: { id: "s_" + id + "_qd", label: "Query Dimension", description: "Query dimension and X axis for charting in the chart control.", notes: "Field name." },
 				queryDimList: { id: "s_" + id + "_qdl", label: "Query Dimension List", description: "List of query dimensions.", notes: "Comma-delimited list by label names each surrounded by single quotes. The chart dimension selector displays this list as options. If value is not \[blank\], the chart dimension toolbar is displayed." },
 				queryDimOrder: { id: "s_" + id + "_qdo", label: "Query Dimension Order", description: "Sort direction for the default sorting of the query dimension.", notes: "Accepted values are: ASC and DESC." },
@@ -586,17 +586,17 @@ DDK.controlOptions = function (id) {
 				queryTop: { id: "s_" + id + "_qt", label: "Query Top", description: "Sets the select arbitrary TOP \[value\] records for display in the Top Sort toolbar.", notes: "This option uses the AMEngine’s query paging facility for cross platform SQL TOP selection." },
 				queryNameEscapeChar: { id: "s_" + id + "_qfnec", label: "Query Field Name Escape Character", description: "Escape Character for the field name of the Query for the control.", notes: "" },
 				queryMode: { id: "s_" + id + "_qm", label: "Query Mode", description: "Query mode for the tree or table control.", notes: "Accepted values are: TSQL, JSON, XML, BASIC, CUSTOM." },
-				beforeRender: { id: "s_" + id + "_qbr", label: "Before Render Function", description: "Executes a function on the JSON or XML response data before passing it to DataTables for rendering.", notes: "This option transforms the response data into a form acceptable to DataTables and must be set if the selected “query.mode” option is JSON or XML." },
-				url: { id: "s_" + id + "_qu", label: "Datasource URL", description: "URL from which to retrieve the JSON or XML data.", notes: "This option must be set if the selected “query.mode” option is JSON or XML." },
-				chooseMetricsDatasource: { id: "s_" + id + "_mcd", label: "Choose Metrics Datasource", description: "Datasource to use when running the query specified in the “metrics_choose_query_widget” option.", notes: "" },
-				chooseMetricsEnabled: { id: "s_" + id + "_mce", label: "Choose Metrics Enabled", description: "Enables (TRUE) or disables (FALSE) the “Choose Metrics” option in the chart or BAM control UI.", notes: "" },
-				chooseMetricsQueryWidget: { id: "s_" + id + "_mcqw", label: "Choose Metrics Query Widget", description: "Different query to use in the “Choose Metrics” option in the chart control UI.", notes: "Widget name." },
-				exportQueryWidget: { id: "s_" + id + "_eqw", label: "Export Query Widget", description: "Query used for the CSV data export.", notes: "This option is useful if the “query_widget” option has embedded HTML or other code built into the SQL." },
+				beforeRender: { id: "s_" + id + "_qbr", label: "Before Render Function", description: "Executes a function on the JSON or XML response data before passing it to DataTables for rendering.", notes: "This option transforms the response data into a form acceptable to DataTables and must be set if the selected 'query.mode' option is JSON or XML." },
+				url: { id: "s_" + id + "_qu", label: "Datasource URL", description: "URL from which to retrieve the JSON or XML data.", notes: "This option must be set if the selected 'query.mode' option is JSON or XML." },
+				chooseMetricsDatasource: { id: "s_" + id + "_mcd", label: "Choose Metrics Datasource", description: "Datasource to use when running the query specified in the 'metrics_choose_query_widget' option.", notes: "" },
+				chooseMetricsEnabled: { id: "s_" + id + "_mce", label: "Choose Metrics Enabled", description: "Enables (TRUE) or disables (FALSE) the 'Choose Metrics' option in the chart or BAM control UI.", notes: "" },
+				chooseMetricsQueryWidget: { id: "s_" + id + "_mcqw", label: "Choose Metrics Query Widget", description: "Different query to use in the 'Choose Metrics' option in the chart control UI.", notes: "Widget name." },
+				exportQueryWidget: { id: "s_" + id + "_eqw", label: "Export Query Widget", description: "Query used for the CSV data export.", notes: "This option is useful if the 'query_widget' option has embedded HTML or other code built into the SQL." },
 				exportFilenameCSV: { id: "s_" + id + "_ecf", label: "Export CSV Filename", description: "File name of the exported CSV file.", notes: "Default value is data_export_[yyyy]-[mm]-[dd]." },
 				filter: { id: "s_" + id + "_fiv", label: "Filter", description: "Sets an SQL statement to filter the data in the chart control at the time of rendering.", notes: "" },
 				filterValue: { id: "s_" + id + "_fv", label: "Serialized Filters", description: "Serialized filters for the Filter toolbar.", notes: "Valid operators are LIKE, NOT LIKE, =, NOT =, >, >=, <, <=, NONE. e.g. ‘Incidents,’‘>=’‘150’^‘Severity,’‘>=’‘Critical’" },
-				metricsDynamic: { id: "s_" + id + "_md", label: "Dynamic Metrics", description: "Metrics to be rendered as dynamic metrics and made available in the “Choose Metrics” option in the chart control UI.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-				metricsStatic: { id: "s_" + id + "_ms", label: "Static Metrics", description: "Metrics to be rendered as static metrics. These metrics are not available in the “Choose Metrics” option in the chart control UI.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
+				metricsDynamic: { id: "s_" + id + "_md", label: "Dynamic Metrics", description: "Metrics to be rendered as dynamic metrics and made available in the 'Choose Metrics' option in the chart control UI.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
+				metricsStatic: { id: "s_" + id + "_ms", label: "Static Metrics", description: "Metrics to be rendered as static metrics. These metrics are not available in the 'Choose Metrics' option in the chart control UI.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
 				metricsFormat: { id: "s_" + id + "_mf", label: "Metrics Format", description: "Sets the display type for metrics series names.", notes: "Accepted values are: NONE, DEFAULT, LCASE, and UCASE." }
 			}
 		},
@@ -605,9 +605,9 @@ DDK.controlOptions = function (id) {
 			label: "Toolbars",
 			options: {
 				toolbarEnabled: { id: "s_" + id + "_te", label: "Toolbar Enabled", description: "Enables (TRUE) or disables (FALSE) the toolbars in the toolbar in the control.", notes: "" },
-				toolbarDefault: { id: "s_" + id + "_td", label: "Toolbar Default", description: "Enables (TRUE) or disables (FALSE) the setting of a single default for all of the following toolbar options: “query.top.enabled”, “preview.enabled”, “metrics.choose.enabled”, “filter.enabled”, “favorite.enabled”, “export.csv.enabled”, “filter.global.enabled”, “refresh.enabled”, “type.enabled”, and “config.enabled”.", notes: "If “toolbar.default” is set to FALSE, all of the above options default to FALSE, regardless if they were individually set to TRUE." },
+				toolbarDefault: { id: "s_" + id + "_td", label: "Toolbar Default", description: "Enables (TRUE) or disables (FALSE) the setting of a single default for all of the following toolbar options: 'query.top.enabled', 'preview.enabled', 'metrics.choose.enabled', 'filter.enabled', 'favorite.enabled', 'export.csv.enabled', 'filter.global.enabled', 'refresh.enabled', 'type.enabled', and 'config.enabled'.", notes: "If 'toolbar.default' is set to FALSE, all of the above options default to FALSE, regardless if they were individually set to TRUE." },
 				configEnabled: { id: "s_" + id + "_ce", label: "Config Enabled", description: "Enables (TRUE) or disables (FALSE) the Configuration toolbar in the control.", notes: "" },
-				csvExportEnabled: { id: "s_" + id + "_ece", label: "CSV Export Enabled", description: "Enables (TRUE) or disables (FALSE) the “Export to CSV” option in the control UI.", notes: "" },
+				csvExportEnabled: { id: "s_" + id + "_ece", label: "CSV Export Enabled", description: "Enables (TRUE) or disables (FALSE) the 'Export to CSV' option in the control UI.", notes: "" },
 				editEnabled: { id: "s_" + id + "_edite", label: "Edit Enabled", description: "Enables (TRUE) or disables (FALSE) the edit option for the control.", notes: "" },
 				expandEnabled: { id: "s_" + id + "_ee", label: "Expand Enabled", description: "Enables (TRUE) or disables (FALSE) the ability to expand nodes in the tree control UI.", notes: "" },
 				favoriteEnabled: { id: "s_" + id + "_fe", label: "Favorites Enabled", description: "Enables (TRUE) or disables (FALSE) the Favorites toolbar.", notes: "" },
@@ -616,7 +616,7 @@ DDK.controlOptions = function (id) {
 				headerEnabled: { id: "s_" + id + "_he", label: "Header Enabled", description: "Enables (TRUE) or disables (FALSE) the header in the control UI.", notes: "" },
 				helpEnabled: { id: "s_" + id + "_helpe", label: "Help Enabled", description: "Enables (TRUE) or disables (FALSE) the help button toolbar in the control.", notes: "" },
 				helpWidget: { id: "s_" + id + "_helpw", label: "Custom Help Content Widget", description: "Sets custom content for the help widget in the toolbar in the control.", notes: "" },
-				previewEnabled: { id: "s_" + id + "_pe", label: "Preview Enabled", description: "Enables (TRUE) or disables (FALSE) the “Preview” option in the chart control UI.", notes: "" },
+				previewEnabled: { id: "s_" + id + "_pe", label: "Preview Enabled", description: "Enables (TRUE) or disables (FALSE) the 'Preview' option in the chart control UI.", notes: "" },
 				queryTopEnabled: { id: "s_" + id + "_qte", label: "Query Top Enabled", description: "Enables (TRUE) or disables (FALSE) the Top Sort toolbar in the chart control UI.", notes: "" },
 				refreshEnabled: { id: "s_" + id + "_re", label: "Refresh Enabled", description: "Enables (TRUE) or disables (FALSE) the refresh toolbar in the control UI.", notes: "" },
 				typeEnabled: { id: "s_" + id + "_tye", label: "Type Enabled", description: "Enables (TRUE) or disables (FALSE) the Type toolbar in the control UI.", notes: "" },
@@ -649,7 +649,7 @@ DDK.controlOptions = function (id) {
 			options: {
 				title: { id: "s_" + id + "_ti", label: "Title", description: "Title for the chart control.", notes: "" },
 				type: { id: "s_" + id + "_ty", label: "Type", description: "Initial chart type displayed when the chart control initializes.", notes: "Accepted values are: column, column100, bar, bar100, and pie." },
-				autoRefreshEnabled: { id: "s_" + id + "_are", label: "Auto-Refresh Enabled", description: "Enables (TRUE) or disables (FALSE) the “Auto-Refresh ON/OFF” option at the top of the Series Config toolbar.", notes: "Boolean." },
+				autoRefreshEnabled: { id: "s_" + id + "_are", label: "Auto-Refresh Enabled", description: "Enables (TRUE) or disables (FALSE) the 'Auto-Refresh ON/OFF' option at the top of the Series Config toolbar.", notes: "Boolean." },
 				dataTableEnabled: { id: "s_" + id + "_de", label: "Data Table Enabled", description: "Enables (TRUE) or disables (FALSE) the datatable showing the series values.", notes: "For vertical chart types only; does not display a datatable under the pie, doughnut, or bar chart types." },
 				labelAutoEnabled: { id: "s_" + id + "_lae", label: "Automatic Labels Enabled", description: "Enables (TRUE) or disables (FALSE) the automatic setting of labels for axis.", notes: "Boolean. Labels are set to the names of the series plotted on each axis as the label for that axis." },
 				labelAxisX: { id: "s_" + id + "_lax", label: "Axis X Label", description: "Label for the X axis.", notes: "Comma-delimited list by label names each surrounded by single quotes. Labels are set to the names of the series plotted on X axis." },
@@ -665,14 +665,14 @@ DDK.controlOptions = function (id) {
 				id: "series",
 				label: "Series",
 				options: {
-					chartArea: { id: "s_" + id + "_sca", label: "Chart Area", description: "Fields to render as series when the chart type is set to “area”.", notes: "Field" },
-					color: { id: "s_" + id + "_sc", label: "Color", description: "Series color indexes matched by splitting the “series_color” option on ^ and the “color” option on a comma (,). Indexes must be formatted as field lists delimited by ^.", notes: "" },
+					chartArea: { id: "s_" + id + "_sca", label: "Chart Area", description: "Fields to render as series when the chart type is set to 'area'.", notes: "Field" },
+					color: { id: "s_" + id + "_sc", label: "Color", description: "Series color indexes matched by splitting the 'series_color' option on ^ and the 'color' option on a comma (,). Indexes must be formatted as field lists delimited by ^.", notes: "" },
 					configWidget: { id: "s_" + id + "_scw", label: "Config Widget", description: "Custom configurations for all series in the chart control, including dynamic and static series and specific individual series.", notes: "Widget" },
-					enabled: { id: "s_" + id + "_se", label: "Enabled", description: "Fields to render as series.", notes: "Comma-delimited list by label names each surrounded by single quotes. A \[blank\] value indicates that all “metrics_static” and “metrics_dynamic” fields are rendered as series." },
+					enabled: { id: "s_" + id + "_se", label: "Enabled", description: "Fields to render as series.", notes: "Comma-delimited list by label names each surrounded by single quotes. A \[blank\] value indicates that all 'metrics_static' and 'metrics_dynamic' fields are rendered as series." },
 					mapareaWidget: { id: "s_" + id + "_smw", label: "Map Area Aattributes Widget", description: "Chart and map area attributes.", notes: "Widget" },
-					pie: { id: "s_" + id + "_sp", label: "Pie", description: "Fields to render as series when the chart type is set to “pie”.", notes: "Comma-delimited list by label names each surrounded by single quotes." },
+					pie: { id: "s_" + id + "_sp", label: "Pie", description: "Fields to render as series when the chart type is set to 'pie'.", notes: "Comma-delimited list by label names each surrounded by single quotes." },
 					showLabels: { id: "s_" + id + "_sslav", label: "Show Value Labels", description: "Fields to render as series with point values shown as labels.", notes: "Comma-delimited list by label names each surrounded by single quotes." },
-					formatAxisX: { id: "s_" + id + "_sxf", label: "X Axis Format", description: "Auto-format type for the X axis.", notes: "The date auto-format expects the query dimension field to be VARCHAR in the format yyyy-mm-dd as output by the SQL function “CONVERT(VARCHAR(10), <datetime>, 120)”. The -dash format variant uses a dash between formatted strings rather than spaces or newline characters." },
+					formatAxisX: { id: "s_" + id + "_sxf", label: "X Axis Format", description: "Auto-format type for the X axis.", notes: "The date auto-format expects the query dimension field to be VARCHAR in the format yyyy-mm-dd as output by the SQL function 'CONVERT(VARCHAR(10), <datetime>, 120)'. The -dash format variant uses a dash between formatted strings rather than spaces or newline characters." },
 					formatWidgetAxisX: { id: "s_" + id + "_sxfw", label: "X Axis Format Widget", description: "Custom format for the X axis.", notes: "Widget" },
 					secondaryAxisY: { id: "s_" + id + "_sys", label: "Secondary Y Axis", description: "Fields to render as series on the secondary Y axis.", notes: "Comma-delimited list by field names each surrounded by single quotes." }
 				},
@@ -680,13 +680,13 @@ DDK.controlOptions = function (id) {
 					id: "type",
 					label: "Type",
 					options: {
-						area: { id: "s_" + id + "_sta", label: "Area", description: "Fields to render as series when the chart type is set to “area”.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						bar: { id: "s_" + id + "_stb", label: "Bar", description: "Fields to render as series when the chart type is set to “bar”.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						column: { id: "s_" + id + "_stc", label: "Column", description: "Fields to render as series when the chart type is set to “column”.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						line: { id: "s_" + id + "_stl", label: "Line", description: "Fields to render as series when the chart type is set to “line”.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						point: { id: "s_" + id + "_stp", label: "Point", description: "Fields to render as series when the chart type is set to “point”.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						stacked: { id: "s_" + id + "_sts", label: "Stacked", description: "Fields to render as stacked series when chart type is set to “bar” or “column”.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						stepLine: { id: "s_" + id + "_stsl", label: "Step Line", description: "Fields to render as series when the chart type is set to “stepline”.", notes: "Comma-delimited list by field names each surrounded by single quotes." }
+						area: { id: "s_" + id + "_sta", label: "Area", description: "Fields to render as series when the chart type is set to 'area'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
+						bar: { id: "s_" + id + "_stb", label: "Bar", description: "Fields to render as series when the chart type is set to 'bar'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
+						column: { id: "s_" + id + "_stc", label: "Column", description: "Fields to render as series when the chart type is set to 'column'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
+						line: { id: "s_" + id + "_stl", label: "Line", description: "Fields to render as series when the chart type is set to 'line'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
+						point: { id: "s_" + id + "_stp", label: "Point", description: "Fields to render as series when the chart type is set to 'point'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
+						stacked: { id: "s_" + id + "_sts", label: "Stacked", description: "Fields to render as stacked series when chart type is set to 'bar' or 'column'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
+						stepLine: { id: "s_" + id + "_stsl", label: "Step Line", description: "Fields to render as series when the chart type is set to 'stepline'.", notes: "Comma-delimited list by field names each surrounded by single quotes." }
 					}
 				}
 			}
@@ -695,11 +695,11 @@ DDK.controlOptions = function (id) {
 			id: "scorecard",
 			label: "Scorecard",
 			options: {
-				headerWidger: { id: "s_" + id + "_hw", label: "Header Widget", description: "Custom content for the header.", notes: "Widget may access AMEngine datasets using the “psc_component_data” attribute. Header content must have the same number of (or fewer) columns than the control. The header renders nicely with an overhanging th colspan (colspan set so that it runs off the edge of the control if rendered at full column-spanned width). The entire dataset is not available at render time in server-side paging mode, so use aggregate functions with caution." },
-				footerWidger: { id: "s_" + id + "_fw", label: "Footer Widget", description: "Custom content for the footer.", notes: "Widget may access AMEngine datasets using the “psc_component_data” attribute. Footer content must have the same number of (or fewer) columns than the control. The footer renders nicely with an overhanging th colspan (colspan set so that it runs off the edge of the control if rendered at full column-spanned width). The entire dataset is not available at render time in server-side paging mode, so use aggregate functions with caution." },
+				headerWidger: { id: "s_" + id + "_hw", label: "Header Widget", description: "Custom content for the header.", notes: "Widget may access AMEngine datasets using the 'psc_component_data' attribute. Header content must have the same number of (or fewer) columns than the control. The header renders nicely with an overhanging th colspan (colspan set so that it runs off the edge of the control if rendered at full column-spanned width). The entire dataset is not available at render time in server-side paging mode, so use aggregate functions with caution." },
+				footerWidger: { id: "s_" + id + "_fw", label: "Footer Widget", description: "Custom content for the footer.", notes: "Widget may access AMEngine datasets using the 'psc_component_data' attribute. Footer content must have the same number of (or fewer) columns than the control. The footer renders nicely with an overhanging th colspan (colspan set so that it runs off the edge of the control if rendered at full column-spanned width). The entire dataset is not available at render time in server-side paging mode, so use aggregate functions with caution." },
 				groupingKey: { id: "s_" + id + "_gk", label: "Grouping Key", description: "Grouping field name key for the control query.", notes: "If this option has no value, the control is rendered ungrouped. If it has a value, the control is rendered grouped. Grouped control do not use DataTables but ungrouped control do use DataTables." },
 				groupingExpanded: { id: "s_" + id + "_ge", label: "Grouping Expanded", description: "Enables (TRUE) or disables (FALSE) expanded grouping.", notes: "If TRUE, control groups are rendered expanded. If FALSE, control groups are rendered collapsed." },
-				sortEnabled: { id: "s_" + id + "_soe", label: "Sort Enabled", description: "Enables (TRUE) or disables (FALSE) the “Sort” option buttonset.", notes: "This option does nothing when the “grouping.key” option is set." }
+				sortEnabled: { id: "s_" + id + "_soe", label: "Sort Enabled", description: "Enables (TRUE) or disables (FALSE) the 'Sort' option buttonset.", notes: "This option does nothing when the 'grouping.key' option is set." }
 			}
 		},
 		table: {
