@@ -1952,7 +1952,8 @@ DDK.template.render = {
 	bamset2Bam: function (accumulator, bam, index) {
 		var bamSections = "header content footer".split(" ");
 		
-		accumulator += "\n\n<div class=\"column bam " + bam.bamClassName + "\" " + bam.bamAttr + ">";
+		accumulator += "\n\n<div class=\"column bam-grid " + bam.bamGridClassName + "\" " + bam.bamGridAttr + ">";
+		accumulator += "\n<div class=\"bam " + bam.bamClassName + "\" " + bam.bamAttr + ">";
 
 		_.each(bamSections, function (section) {
 			var sectionTitle = _.string.titleize(section);
@@ -1963,12 +1964,14 @@ DDK.template.render = {
 		});
 		
 		accumulator += "</div>";
+		accumulator += "</div>";
 		
 		return accumulator;
 	},
 	
 	bamset2Element: function (accumulator, elem, index) {
-		accumulator += "\n\n<div class=\"column bam-element " + elem.elemClassName + "\" " + elem.elemAttr;
+		accumulator += "\n\n<div class=\"column element-grid " + elem.elemGridClassName + "\" " + elem.elemGridAttr;
+		accumulator += "\n<div class=\"bam-element " + elem.elemClassName + "\" " + elem.elemAttr;
 		accumulator += (elem.elemFormat ? " data-format=\"" + elem.elemFormat + "\"" : "");
 		accumulator += (elem.elemFormat ? " data-format-value=\"" + elem.elemValue + "\"" : "");
 		accumulator += (elem.elemFormatStyle ? " data-format-style=\"" + elem.elemFormatStyle + "\"" : "");		
@@ -1979,6 +1982,7 @@ DDK.template.render = {
 			accumulator += elem.elemValue;
 		}
 				
+		accumulator += "</div>";
 		accumulator += "</div>";
 		
 		return accumulator;
