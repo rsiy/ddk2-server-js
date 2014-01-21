@@ -574,7 +574,7 @@ DDK.controlOptions = function (id) {
 			label: "Data",
 			options: {
 				initWidget: { id: "s_" + id + "_iw", label: "Options Widget", description: "The options in the data-options.", notes: "Widget name." },
-				keywords: { id: "s_" + id + "_keywords", label: "Keywords", description: "The state keyword overrides the option keyword, which overrides the data-options attribute.", notes: "" },
+				keywords: { id: "s_" + id + "_keywords", label: "Keywords", description: "State keyword overrides the option keyword, which overrides the data-options attribute.", notes: "" },
 				datasource: { id: "s_" + id + "_d", label: "Datasource", description: "Datasource to use when running the query specified in the 'query_widget' option.", notes: "Default value is 'db.amdb'." },
 				datasourceShared: { id: "s_" + id + "_dse", label: "Shared Datasource Enabled", description: "Enables (TRUE) or disables (FALSE) the use of a datasource that is being used or shared with other components.", notes: "" },
 				queryWidget: { id: "s_" + id + "_qw", label: "Query Widget", description: "Query for the content in the control.", notes: "Widget name." },
@@ -583,10 +583,10 @@ DDK.controlOptions = function (id) {
 				queryDimList: { id: "s_" + id + "_qdl", label: "Query Dimension List", description: "List of query dimensions.", notes: "Comma-delimited list by label names each surrounded by single quotes. The chart dimension selector displays this list as options. If value is not \[blank\], the chart dimension toolbar is displayed." },
 				queryDimOrder: { id: "s_" + id + "_qdo", label: "Query Dimension Order", description: "Sort direction for the default sorting of the query dimension.", notes: "Accepted values are: ASC and DESC." },
 				queryOrder: { id: "s_" + id + "_qo", label: "Query Order", description: "Overrides the default sort direction of the query dimension.", notes: "The value of this option must be a single field and direction pair (e.g. COLUMN1 DESC)." },
-				queryTop: { id: "s_" + id + "_qt", label: "Query Top", description: "Sets the select arbitrary TOP \[value\] records for display in the Top Sort toolbar.", notes: "This option uses the AMEngine’s query paging facility for cross platform SQL TOP selection." },
+				queryTop: { id: "s_" + id + "_qt", label: "Query Top", description: "Arbitrary TOP \[value\] records for display in the Top Sort toolbar.", notes: "Number. This option uses the AMEngine’s query paging facility for cross platform SQL TOP selection." },
 				queryNameEscapeChar: { id: "s_" + id + "_qfnec", label: "Query Field Name Escape Character", description: "Escape Character for the field name of the Query for the control.", notes: "" },
 				queryMode: { id: "s_" + id + "_qm", label: "Query Mode", description: "Query mode for the tree or table control.", notes: "Accepted values are: TSQL, JSON, XML, BASIC, CUSTOM." },
-				beforeRender: { id: "s_" + id + "_qbr", label: "Before Render Function", description: "Executes a function on the JSON or XML response data before passing it to DataTables for rendering.", notes: "This option transforms the response data into a form acceptable to DataTables and must be set if the selected 'query.mode' option is JSON or XML." },
+				beforeRender: { id: "s_" + id + "_qbr", label: "Before Render Function", description: "Executes a function on the JSON or XML response data before passing it to DataTables for rendering.", notes: "Function Name. This option transforms the response data into a form acceptable to DataTables and must be set if the selected 'query.mode' option is JSON or XML." },
 				url: { id: "s_" + id + "_qu", label: "Datasource URL", description: "URL from which to retrieve the JSON or XML data.", notes: "This option must be set if the selected 'query.mode' option is JSON or XML." },
 				chooseMetricsDatasource: { id: "s_" + id + "_mcd", label: "Choose Metrics Datasource", description: "Datasource to use when running the query specified in the 'metrics_choose_query_widget' option.", notes: "" },
 				chooseMetricsEnabled: { id: "s_" + id + "_mce", label: "Choose Metrics Enabled", description: "Enables (TRUE) or disables (FALSE) the 'Choose Metrics' option in the chart or BAM control UI.", notes: "" },
@@ -594,9 +594,9 @@ DDK.controlOptions = function (id) {
 				exportQueryWidget: { id: "s_" + id + "_eqw", label: "Export Query Widget", description: "Query used for the CSV data export.", notes: "This option is useful if the 'query_widget' option has embedded HTML or other code built into the SQL." },
 				exportFilenameCSV: { id: "s_" + id + "_ecf", label: "Export CSV Filename", description: "File name of the exported CSV file.", notes: "Default value is data_export_[yyyy]-[mm]-[dd]." },
 				filter: { id: "s_" + id + "_fiv", label: "Filter", description: "Sets an SQL statement to filter the data in the chart control at the time of rendering.", notes: "" },
-				filterValue: { id: "s_" + id + "_fv", label: "Serialized Filters", description: "Serialized filters for the Filter toolbar.", notes: "Valid operators are LIKE, NOT LIKE, =, NOT =, >, >=, <, <=, NONE. e.g. ‘Incidents,’‘>=’‘150’^‘Severity,’‘>=’‘Critical’" },
-				metricsDynamic: { id: "s_" + id + "_md", label: "Dynamic Metrics", description: "Metrics to be rendered as dynamic metrics and made available in the 'Choose Metrics' option in the chart control UI.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-				metricsStatic: { id: "s_" + id + "_ms", label: "Static Metrics", description: "Metrics to be rendered as static metrics. These metrics are not available in the 'Choose Metrics' option in the chart control UI.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
+				filterValue: { id: "s_" + id + "_fv", label: "Serialized Filters", description: "Serialized filters for the Filter toolbar.", notes: "Valid operators are LIKE, NOT LIKE, =, NOT =, >, >=, <, <=, NONE. (e.g. ‘Incidents,’‘>=’‘150’^‘Severity,’‘LIKE’‘Critical’)" },
+				metricsDynamic: { id: "s_" + id + "_md", label: "Dynamic Metrics", description: "Metrics to be rendered as dynamic metrics and made available in the 'Choose Metrics' option in the chart control UI.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Hits','Home_Runs')" },
+				metricsStatic: { id: "s_" + id + "_ms", label: "Static Metrics", description: "Metrics to be rendered as static metrics. These metrics are not available in the 'Choose Metrics' option in the chart control UI.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Hits','Home_Runs')." },
 				metricsFormat: { id: "s_" + id + "_mf", label: "Metrics Format", description: "Sets the display type for metrics series names.", notes: "Accepted values are: NONE, DEFAULT, LCASE, and UCASE." }
 			}
 		},
@@ -605,7 +605,7 @@ DDK.controlOptions = function (id) {
 			label: "Toolbars",
 			options: {
 				toolbarEnabled: { id: "s_" + id + "_te", label: "Toolbar Enabled", description: "Enables (TRUE) or disables (FALSE) the toolbars in the toolbar in the control.", notes: "" },
-				toolbarDefault: { id: "s_" + id + "_td", label: "Toolbar Default", description: "Enables (TRUE) or disables (FALSE) the setting of a single default for all of the following toolbar options: 'query.top.enabled', 'preview.enabled', 'metrics.choose.enabled', 'filter.enabled', 'favorite.enabled', 'export.csv.enabled', 'filter.global.enabled', 'refresh.enabled', 'type.enabled', and 'config.enabled'.", notes: "If 'toolbar.default' is set to FALSE, all of the above options default to FALSE, regardless if they were individually set to TRUE." },
+				toolbarDefault: { id: "s_" + id + "_td", label: "Toolbar Default", description: "Enables (TRUE) or disables (FALSE) the setting of a single default for all of the following toolbar options: 'query.top.enabled', 'Preview Enabled', 'metrics.choose.enabled', 'filter.enabled', 'favorite.enabled', 'export.csv.enabled', 'filter.global.enabled', 'refresh.enabled', 'type.enabled', and 'config.enabled'.", notes: "If 'toolbar.default' is set to FALSE, all of the above options default to FALSE, regardless if they were individually set to TRUE." },
 				configEnabled: { id: "s_" + id + "_ce", label: "Config Enabled", description: "Enables (TRUE) or disables (FALSE) the Configuration toolbar in the control.", notes: "" },
 				csvExportEnabled: { id: "s_" + id + "_ece", label: "CSV Export Enabled", description: "Enables (TRUE) or disables (FALSE) the 'Export to CSV' option in the control UI.", notes: "" },
 				editEnabled: { id: "s_" + id + "_edite", label: "Edit Enabled", description: "Enables (TRUE) or disables (FALSE) the edit option for the control.", notes: "" },
@@ -632,10 +632,10 @@ DDK.controlOptions = function (id) {
 			label: "Configuration",
 			options: {
 				"class": { id: "s_" + id + "_c", label: "Class", description: "CSS class for additional styling in the main content.", notes: "Default value is \[componentName\]-default." },
-				config: { id: "s_" + id + "_con", label: "Config", dataType: "json", description: "Comma-separated list of JSON objects for scorecard or bamset control.", notes: "Keywords (including global keywords, data result set keywords, and automatic data result set aggregate keywords) may be used in this option for any column attribute; all ~ characters must be escaped as %% (double percent)." },
+				config: { id: "s_" + id + "_con", label: "Config", dataType: "json", description: "Comma-separated list of JSON objects for scorecard or bamset control.", notes: "Keywords (including global keywords, data result set keywords, and automatic data result set aggregate keywords) may be used in this option for any column attribute; all ~ characters must be escaped as %% (double percent). (e.g. { columns: \[{prefix: 'metric', sortValue: '%%METRIC_NAME%%'}\], tableClassName: ""})" },
 				configWidget: { id: "s_" + id + "_cw", label: "Config Widget", description: "Overrides or adds chart attributes via keywords included in the widget.", notes: "Widget. Runs immediately before the control renders." },
-				controlConfigWidget: { id: "s_" + id + "_ccw", label: "Control Config Widget", description: "Sets the custom config for all series in the chart, all dynamic series, all static series, and/or for specific individual series.", notes: "Widget" },
-				controlCSS: { id: "s_" + id + "_ccss", label: "Control CSS", description: "Sets the arbitrary CSS to be included in control favorites for use with the Metrics Browser and View Designer.", notes: "Option value will be automatically wrapped in \"<style></style>\" tags and will affect the entire document." },
+				controlConfigWidget: { id: "s_" + id + "_ccw", label: "Control Config Widget", description: "Sets the custom config for all series in the chart, all dynamic series, all static series, and/or for specific individual series.", notes: "Widget name" },
+				controlCSS: { id: "s_" + id + "_ccss", label: "Control CSS", description: "Arbitrary CSS to be included in control favorites for use with the Metrics Browser and View Designer.", notes: "Option value will be automatically wrapped in \"<style></style>\" tags and will affect the entire document." },
 				controlJS: { id: "s_" + id + "_cjs", label: "Control JavaScript", description: "Arbitrary javascript to be included in control favorites for use with the Metrics Browser and View Designer.", notes: "In the rendered JavaScript script element, function calls are not allowed, so code such as `console.log(\"message\");` will have no effect. Property assignments are allowed, and DDK keyword syntax will be evaluated." },
 				mouseover: { id: "s_" + id + "_mouse", label: "Mouseover", description: "Custom mouseover configurations that are activated via a data-ddk-mouseover attribute assigned to any element.", notes: "If no value is found in data-ddk-mouseover or a matching key does not exist, no mouseover will be rendered." },
 				nodataWidget: { id: "s_" + id + "_ndw", label: "No-Data Widget", description: "Custom content to be rendered when control query returns no data.", notes: "This will render for all controls except Notes Control." },
@@ -652,9 +652,9 @@ DDK.controlOptions = function (id) {
 				autoRefreshEnabled: { id: "s_" + id + "_are", label: "Auto-Refresh Enabled", description: "Enables (TRUE) or disables (FALSE) the 'Auto-Refresh ON/OFF' option at the top of the Series Config toolbar.", notes: "Boolean." },
 				dataTableEnabled: { id: "s_" + id + "_de", label: "Data Table Enabled", description: "Enables (TRUE) or disables (FALSE) the datatable showing the series values.", notes: "For vertical chart types only; does not display a datatable under the pie, doughnut, or bar chart types." },
 				labelAutoEnabled: { id: "s_" + id + "_lae", label: "Automatic Labels Enabled", description: "Enables (TRUE) or disables (FALSE) the automatic setting of labels for axis.", notes: "Boolean. Labels are set to the names of the series plotted on each axis as the label for that axis." },
-				labelAxisX: { id: "s_" + id + "_lax", label: "Axis X Label", description: "Label for the X axis.", notes: "Comma-delimited list by label names each surrounded by single quotes. Labels are set to the names of the series plotted on X axis." },
-				labelAxisY: { id: "s_" + id + "_lay", label: "Axis Y Label", description: "Label for the Y axis.", notes: "Comma-delimited list by label names each surrounded by single quotes. Labels are set to the names of the series plotted on Y axis (left side)." },
-				labelAxisY2: { id: "s_" + id + "_lay2", label: "Axis Y2 Label", description: "Label for the secondary Y axis.", notes: "Comma-delimited list by label names each surrounded by single quotes. Labels are set to the names of the series plotted on secondary Y axis (right side)." },
+				labelAxisX: { id: "s_" + id + "_lax", label: "Axis X Label", description: "Label for the X axis.", notes: "Comma-delimited list by label names each surrounded by single quotes (e.g. 'Games','Home_Runs'). Labels are set to the names of the series plotted on X axis." },
+				labelAxisY: { id: "s_" + id + "_lay", label: "Axis Y Label", description: "Label for the Y axis.", notes: "Comma-delimited list by label names each surrounded by single quotes (e.g. 'Games','Home_Runs'). Labels are set to the names of the series plotted on Y axis (left side)." },
+				labelAxisY2: { id: "s_" + id + "_lay2", label: "Axis Y2 Label", description: "Label for the secondary Y axis.", notes: "Comma-delimited list by label names each surrounded by single quotes (e.g. 'Games','Home_Runs'). Labels are set to the names of the series plotted on secondary Y axis (right side)." },
 				stackedLabelY: { id: "s_" + id + "_layse", label: "Stacked Series Labels Enabled, Axis Y", description: "Enables (TRUE) or disables (FALSE) the use of a stacked Y axis.", notes: "Boolean." },
 				stackedLabelY2: { id: "s_" + id + "_lay2se", label: "Stacked Series Labels Enabled, Axis Y2", description: "Enables (TRUE) or disables (FALSE) the use of a stacked secondary Y axis.", notes: "Boolean." },
 				legend: { id: "s_" + id + "_lp", label: "Legend Position", description: "Position of the chart legend relative to the chart.", notes: "Accepted values are: NONE, TOP, BOTTOM, LEFT, and RIGHT." },
@@ -668,25 +668,25 @@ DDK.controlOptions = function (id) {
 					chartArea: { id: "s_" + id + "_sca", label: "Chart Area", description: "Fields to render as series when the chart type is set to 'area'.", notes: "Field" },
 					color: { id: "s_" + id + "_sc", label: "Color", description: "Series color indexes matched by splitting the 'series_color' option on ^ and the 'color' option on a comma (,). Indexes must be formatted as field lists delimited by ^.", notes: "" },
 					configWidget: { id: "s_" + id + "_scw", label: "Config Widget", description: "Custom configurations for all series in the chart control, including dynamic and static series and specific individual series.", notes: "Widget" },
-					enabled: { id: "s_" + id + "_se", label: "Enabled", description: "Fields to render as series.", notes: "Comma-delimited list by label names each surrounded by single quotes. A \[blank\] value indicates that all 'metrics_static' and 'metrics_dynamic' fields are rendered as series." },
+					enabled: { id: "s_" + id + "_se", label: "Enabled", description: "Fields to render as series.", notes: "Comma-delimited list by label names each surrounded by single quotes (e.g. 'Games','Home_Runs'). A \[blank\] value indicates that all 'metrics_static' and 'metrics_dynamic' fields are rendered as series." },
 					mapareaWidget: { id: "s_" + id + "_smw", label: "Map Area Aattributes Widget", description: "Chart and map area attributes.", notes: "Widget" },
-					pie: { id: "s_" + id + "_sp", label: "Pie", description: "Fields to render as series when the chart type is set to 'pie'.", notes: "Comma-delimited list by label names each surrounded by single quotes." },
-					showLabels: { id: "s_" + id + "_sslav", label: "Show Value Labels", description: "Fields to render as series with point values shown as labels.", notes: "Comma-delimited list by label names each surrounded by single quotes." },
+					pie: { id: "s_" + id + "_sp", label: "Pie", description: "Fields to render as series when the chart type is set to 'pie'.", notes: "Comma-delimited list by label names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
+					showLabels: { id: "s_" + id + "_sslav", label: "Show Value Labels", description: "Fields to render as series with point values shown as labels.", notes: "Comma-delimited list by label names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
 					formatAxisX: { id: "s_" + id + "_sxf", label: "X Axis Format", description: "Auto-format type for the X axis.", notes: "The date auto-format expects the query dimension field to be VARCHAR in the format yyyy-mm-dd as output by the SQL function 'CONVERT(VARCHAR(10), <datetime>, 120)'. The -dash format variant uses a dash between formatted strings rather than spaces or newline characters." },
 					formatWidgetAxisX: { id: "s_" + id + "_sxfw", label: "X Axis Format Widget", description: "Custom format for the X axis.", notes: "Widget" },
-					secondaryAxisY: { id: "s_" + id + "_sys", label: "Secondary Y Axis", description: "Fields to render as series on the secondary Y axis.", notes: "Comma-delimited list by field names each surrounded by single quotes." }
+					secondaryAxisY: { id: "s_" + id + "_sys", label: "Secondary Y Axis", description: "Fields to render as series on the secondary Y axis.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." }
 				},
 				type: {
 					id: "type",
 					label: "Type",
 					options: {
-						area: { id: "s_" + id + "_sta", label: "Area", description: "Fields to render as series when the chart type is set to 'area'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						bar: { id: "s_" + id + "_stb", label: "Bar", description: "Fields to render as series when the chart type is set to 'bar'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						column: { id: "s_" + id + "_stc", label: "Column", description: "Fields to render as series when the chart type is set to 'column'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						line: { id: "s_" + id + "_stl", label: "Line", description: "Fields to render as series when the chart type is set to 'line'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						point: { id: "s_" + id + "_stp", label: "Point", description: "Fields to render as series when the chart type is set to 'point'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						stacked: { id: "s_" + id + "_sts", label: "Stacked", description: "Fields to render as stacked series when chart type is set to 'bar' or 'column'.", notes: "Comma-delimited list by field names each surrounded by single quotes." },
-						stepLine: { id: "s_" + id + "_stsl", label: "Step Line", description: "Fields to render as series when the chart type is set to 'stepline'.", notes: "Comma-delimited list by field names each surrounded by single quotes." }
+						area: { id: "s_" + id + "_sta", label: "Area", description: "Fields to render as series when the chart type is set to 'area'.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
+						bar: { id: "s_" + id + "_stb", label: "Bar", description: "Fields to render as series when the chart type is set to 'bar'.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
+						column: { id: "s_" + id + "_stc", label: "Column", description: "Fields to render as series when the chart type is set to 'column'.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
+						line: { id: "s_" + id + "_stl", label: "Line", description: "Fields to render as series when the chart type is set to 'line'.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
+						point: { id: "s_" + id + "_stp", label: "Point", description: "Fields to render as series when the chart type is set to 'point'.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
+						stacked: { id: "s_" + id + "_sts", label: "Stacked", description: "Fields to render as stacked series when chart type is set to 'bar' or 'column'.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
+						stepLine: { id: "s_" + id + "_stsl", label: "Step Line", description: "Fields to render as series when the chart type is set to 'stepline'.", notes: "Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." }
 					}
 				}
 			}
@@ -695,8 +695,8 @@ DDK.controlOptions = function (id) {
 			id: "scorecard",
 			label: "Scorecard",
 			options: {
-				headerWidger: { id: "s_" + id + "_hw", label: "Header Widget", description: "Custom content for the header.", notes: "Widget may access AMEngine datasets using the 'psc_component_data' attribute. Header content must have the same number of (or fewer) columns than the control. The header renders nicely with an overhanging th colspan (colspan set so that it runs off the edge of the control if rendered at full column-spanned width). The entire dataset is not available at render time in server-side paging mode, so use aggregate functions with caution." },
-				footerWidger: { id: "s_" + id + "_fw", label: "Footer Widget", description: "Custom content for the footer.", notes: "Widget may access AMEngine datasets using the 'psc_component_data' attribute. Footer content must have the same number of (or fewer) columns than the control. The footer renders nicely with an overhanging th colspan (colspan set so that it runs off the edge of the control if rendered at full column-spanned width). The entire dataset is not available at render time in server-side paging mode, so use aggregate functions with caution." },
+				headerWidger: { id: "s_" + id + "_hw", label: "Header Widget", description: "Custom content for the header.", notes: "Header content must have the same number of (or fewer) columns than the control. The header renders nicely with an overhanging th colspan (colspan set so that it runs off the edge of the control if rendered at full column-spanned width). The entire dataset is not available at render time in server-side paging mode, so use aggregate functions with caution." },
+				footerWidger: { id: "s_" + id + "_fw", label: "Footer Widget", description: "Custom content for the footer.", notes: "Footer content must have the same number of (or fewer) columns than the control. The footer renders nicely with an overhanging th colspan (colspan set so that it runs off the edge of the control if rendered at full column-spanned width). The entire dataset is not available at render time in server-side paging mode, so use aggregate functions with caution." },
 				groupingKey: { id: "s_" + id + "_gk", label: "Grouping Key", description: "Grouping field name key for the control query.", notes: "If this option has no value, the control is rendered ungrouped. If it has a value, the control is rendered grouped. Grouped control do not use DataTables but ungrouped control do use DataTables." },
 				groupingExpanded: { id: "s_" + id + "_ge", label: "Grouping Expanded", description: "Enables (TRUE) or disables (FALSE) expanded grouping.", notes: "If TRUE, control groups are rendered expanded. If FALSE, control groups are rendered collapsed." },
 				sortEnabled: { id: "s_" + id + "_soe", label: "Sort Enabled", description: "Enables (TRUE) or disables (FALSE) the 'Sort' option buttonset.", notes: "This option does nothing when the 'grouping.key' option is set." }
@@ -706,9 +706,9 @@ DDK.controlOptions = function (id) {
 			id: "table",
 			label: "Table",
 			options: {
-				filterMetricsSelect: { id: "s_" + id + "_fms", label: "Select Column Filters", description: "Selectable filter drop-down menus for columns.", notes: "The filter menu displays at the top of the column it is set for. Comma-delimited list by field names each surrounded by single quotes." },
-				filterMetricsText: { id: "s_" + id + "_fmt", label: "Text Column Filters", description: "Filter text field for columns.", notes: "Filter text field displays at the top of the column it is set for. Comma-delimited list by field names each surrounded by single quotes." },
-				sortValue: { id: "s_" + id + "_sv", label: "Sort Value", description: "Sorting order of the table column", notes: "Comma-delimited list by field number and sort order each surrounded by single quotes. e.g. '0','asc'^'2','desc'" }
+				filterMetricsSelect: { id: "s_" + id + "_fms", label: "Select Column Filters", description: "Selectable filter drop-down menus for columns.", notes: "The filter menu displays at the top of the column it is set for. Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
+				filterMetricsText: { id: "s_" + id + "_fmt", label: "Text Column Filters", description: "Filter text field for columns.", notes: "Filter text field displays at the top of the column it is set for. Comma-delimited list by field names each surrounded by single quotes (e.g. 'Games','Home_Runs')." },
+				sortValue: { id: "s_" + id + "_sv", label: "Sort Value", description: "Sorting order of the table column", notes: "Comma-delimited list by field number and sort order each surrounded by single quotes. (e.g. '0','asc'^'2','desc')" }
 			}
 		},
 		paging: {
@@ -722,6 +722,7 @@ DDK.controlOptions = function (id) {
 		}
 	};
 };
+
 
 
 /*
